@@ -36,7 +36,7 @@ class Mine {
         Mine.rewardGrid = tmpRewardGrid;
 
         for (let i = 0; i < App.game.underground.getMaxItems(); i++) {
-            const item = UndergroundItem.getRandomItem();
+            const item = UndergroundItem.getRandomItem(player.highestRegion());
             const x = Mine.getRandomCoord(this.sizeX, item.space[0].length);
             const y = Mine.getRandomCoord(this.sizeY, item.space.length);
             const res = Mine.canAddReward(x, y, item);
